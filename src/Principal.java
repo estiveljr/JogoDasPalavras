@@ -2,8 +2,9 @@
 public class Principal {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		BancoDePalavras ListaDePalavras = new BancoDePalavras();
+		ListaDePalavras.sortearPalavra();
+		System.out.println(ListaDePalavras.getPalavra());
 	}
 
 }
