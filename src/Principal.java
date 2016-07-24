@@ -6,5 +6,4 @@ public class Principal {
 		ListaDePalavras.sortearPalavra();
 		System.out.println(ListaDePalavras.getPalavra());
 	}
-
 }
