@@ -1,9 +1,25 @@
+import embaralhadores.FabricaDeEmbaralhadores;
+import embaralhadores.embaralhador;
+import embaralhadores.inversor;
 
 public class Principal {
 
 	public static void main(String[] args) {
+		String palavra;
+		String palavraEmbaralhada;
+		
+		//escolher palavra aleatoria do banco
 		BancoDePalavras ListaDePalavras = new BancoDePalavras();
 		ListaDePalavras.sortearPalavra();
-		System.out.println(ListaDePalavras.getPalavra());
+		palavra = ListaDePalavras.getPalavra();
+		System.out.println("Palavra Sorteada = " + palavra);
+		
+		//embaralha palavra
+		FabricaDeEmbaralhadores fabrica = new FabricaDeEmbaralhadores();
+		palavraEmbaralhada = fabrica.SortearEEmbaralhar(palavra);
+		System.out.println("Palavra embaralhada = " + palavraEmbaralhada);
+		
+
+		
 	}
 }
