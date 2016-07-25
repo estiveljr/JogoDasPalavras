@@ -4,8 +4,22 @@ public class ImparPar implements embaralhador {
 
 	@Override
 	public String embaralhar(String palavra) {
-		// TODO Auto-generated method stub
-		return null;
+		char[] letras = palavra.toCharArray(); 
+		
+		
+		
+		
+		
+		
+		
+		String palavraEmbaralhada;
+		return palavraEmbaralhada;
+	}
+	
+	@Override
+	public int pesoPontuacao() {
+		int pesoPontuacao = 4;
+		return pesoPontuacao;
 	}
 	
 }

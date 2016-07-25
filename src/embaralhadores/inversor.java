@@ -22,5 +22,10 @@ public class inversor implements embaralhador {
 		String palavraEmbaralhada = new String(charArrayInvertido);
 		return palavraEmbaralhada;
 	}
-
+	
+	@Override
+	public int pesoPontuacao() {
+		int pesoPontuacao = 2;
+		return pesoPontuacao;
+	}
 }

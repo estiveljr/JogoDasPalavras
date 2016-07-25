@@ -1,7 +1,7 @@
 
 public class BancoDePalavras {
 	private String palavra;
-	private String[] BancoDePalavras = {"papagaio", "elefante","jacaré","gato","cachorro","tartaruga"};
+	private String[] BancoDePalavras = {"papagaio", "elefante","jacarÃ©","gato","cachorro","tartaruga"};
 	
 	public String getPalavra() {
 		return palavra;
