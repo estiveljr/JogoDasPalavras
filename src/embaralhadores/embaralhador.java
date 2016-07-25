@@ -1,7 +1,7 @@
 package embaralhadores;
 
 public interface embaralhador {
-	String embaralhar(String palavra);
+	String embaralhar();
 	int pesoPontuacao();
 
 }

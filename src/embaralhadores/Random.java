@@ -5,9 +5,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class Random implements embaralhador {
-
+	private String palavra;
+	public Random(String palavra) {
+		super();
+		this.palavra = palavra;
+	}
+	
 	@Override
-	public String embaralhar(String palavra) {
+	public String embaralhar() {
 		
 		
 		char[] caracteres = palavra.toCharArray();
@@ -26,7 +31,9 @@ public class Random implements embaralhador {
 
 	@Override
 	public int pesoPontuacao() {
-		int pesoPontuacao = 10;
+		int pesoPontuacao = 10; // peso base do embaralhamento
+		if (palavra.length()>10)
+			pesoPontuacao *= 2;
 		return pesoPontuacao;
 	}
 	

@@ -1,9 +1,15 @@
 package embaralhadores;
 
 public class inversor implements embaralhador {
-	
+	private String palavra;
+
+	public inversor(String palavra) {
+		super();
+		this.palavra = palavra;
+	}
+
 	@Override
-	public String embaralhar(String palavra) {
+	public String embaralhar() {
 		  
 	    int tam = palavra.length();
 	    char[] charArray = new char[tam];
@@ -25,7 +31,9 @@ public class inversor implements embaralhador {
 	
 	@Override
 	public int pesoPontuacao() {
-		int pesoPontuacao = 2;
+		int pesoPontuacao = 2; // peso base do embaralhamento
+		if (palavra.length()>10)
+			pesoPontuacao *= 2;
 		return pesoPontuacao;
 	}
 }

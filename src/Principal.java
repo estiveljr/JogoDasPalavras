@@ -17,6 +17,9 @@ public class Principal {
 		FabricaDeEmbaralhadores fabrica = new FabricaDeEmbaralhadores();
 		palavraEmbaralhada = fabrica.SortearEEmbaralhar(palavra);
 		System.out.println("Palavra embaralhada = " + palavraEmbaralhada);
+		
+		//Retorna quanto pontos a palavra vale
+		System.out.println("Esta palavra vale " + fabrica.getPesoPontos() + " pontos.");
 			
 	}
 }
