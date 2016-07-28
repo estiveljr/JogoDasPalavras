@@ -1,3 +1,4 @@
+package MecanicaDoJogo;
 
 public class BancoDePalavras {
 	private String palavra;
