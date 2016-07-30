@@ -1,9 +1,9 @@
 package embaralhadores;
 
-public class inversor implements embaralhador {
+public class Inversor implements embaralhador {
 	private String palavra;
 
-	public inversor(String palavra) {
+	public Inversor(String palavra) {
 		super();
 		this.palavra = palavra;
 	}

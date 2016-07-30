@@ -12,7 +12,7 @@ public class FabricaDeEmbaralhadores {
 		int numSorteio = (int)(Math.random() * 3);
 		
 		if (numSorteio == 0){
-			embaralhador inversor = new inversor(palavra);
+			embaralhador inversor = new Inversor(palavra);
 			this.PalavraEmbaralhada = inversor.embaralhar();
 			this.pesoPontos = inversor.pesoPontuacao();
 		}else if(numSorteio == 1){
