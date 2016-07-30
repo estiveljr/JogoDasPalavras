@@ -1,18 +1,30 @@
 package MecanicaDoJogo;
+
 import embaralhadores.FabricaDeEmbaralhadores;
 
-public class Jogo implements MecanicaDoJogo {
+public class JogoDificil implements MecanicaDoJogo {
 
+	private int VidasInciciais = 1;		//Define o número de tentativas possiveis
+	private int pontosParaVitoria = 150; // define a pontuação necessária para ganhar o jogo
 	private String palavra;
 	private String palavraEmbaralhada;
 	private FabricaDeEmbaralhadores fabrica = new FabricaDeEmbaralhadores();
-	private int TotalDePontos = 0;
-	private int Vidas = 3;
-	private int pontosParaVitoria = 2; // define a pontuação necessária para ganhar o jogo
+	private int TotalDePontos;
+	private int ContagemDeVidas = VidasInciciais;
+	
+	@Override
+	public int GetVidasInciciais(){
+		return VidasInciciais;
+	};
+	
+	@Override
+	public int GetPontosParaVitoria(){
+		return pontosParaVitoria;
+	};
 	
 	@Override
 	public boolean FimDeJogo() {
-		if (TotalDePontos >= pontosParaVitoria || Vidas < 0)
+		if (TotalDePontos >= pontosParaVitoria || ContagemDeVidas < 0)
 			return true;
 		return false;
 	}
@@ -23,7 +35,7 @@ public class Jogo implements MecanicaDoJogo {
 			TotalDePontos += Pontos();
 			return true;
 		}else{
-			Vidas -= 1; 
+			ContagemDeVidas -= 1; 
 			return false;
 		}
 	}
@@ -33,14 +45,17 @@ public class Jogo implements MecanicaDoJogo {
 		BancoDePalavras ListaDePalavras = new BancoDePalavras();
 		ListaDePalavras.sortearPalavra();
 		this.palavra = ListaDePalavras.getPalavra();
-		System.out.println("Palavra Sorteada = " + palavra);
 		return palavra;
 	}
 
 	@Override
 	public String Embaralhar() {
 		palavraEmbaralhada = fabrica.SortearEEmbaralhar(palavra);
-		System.out.println("Palavra embaralhada = " + palavraEmbaralhada);
+		return palavraEmbaralhada;
+	}
+	
+	@Override
+	public String GetPalavraEmbaralhada() {
 		return palavraEmbaralhada;
 	}
 
@@ -55,14 +70,14 @@ public class Jogo implements MecanicaDoJogo {
 	}
 
 	@Override
-	public int Vidas() {
-		return Vidas;
+	public int ContagemDeVidas() {
+		return ContagemDeVidas;
 	}
+
+
+
+
 	
-	@Override
-	public void limpaTela(){
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-				 
-	}
+
 
 }
