@@ -9,12 +9,12 @@ import java.util.List;
 public class LeiaCVS {
 
 
-  public static List<String> run(String caminho) {
+  public static List<String> run(String caminho) throws FileNotFoundException{
    String line = null;
     BufferedReader stream = null;
     List<String> csvData = new ArrayList<String>();
 
-    try {
+
         stream = new BufferedReader(new FileReader(caminho)); // Podes usar BufferedReader ao invés do CSVReader 
         try {
 			while ((line = stream.readLine()) != null) {
@@ -28,10 +28,6 @@ public class LeiaCVS {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    } catch (FileNotFoundException e) {
-		System.out.println("O caminho digitado não se refere a nenhum arquivo CSV. Favor digitar o caminho novamente");
-		//e.printStackTrace();
-	} finally {
         if (stream != null)
 			try {
 				stream.close();
@@ -39,8 +35,7 @@ public class LeiaCVS {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-    }
-
+    
     return csvData;
   }
 

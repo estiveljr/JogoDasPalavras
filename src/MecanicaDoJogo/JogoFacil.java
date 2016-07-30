@@ -5,7 +5,7 @@ import embaralhadores.FabricaDeEmbaralhadores;
 public class JogoFacil implements MecanicaDoJogo {
 	
 	private int VidasInciciais = 3;		//Define o número de tentativas possiveis
-	private int pontosParaVitoria = 2; // define a pontuação necessária para ganhar o jogo
+	private int pontosParaVitoria = 60; // define a pontuação necessária para ganhar o jogo
 	private String palavra;
 	private String palavraEmbaralhada;
 	private FabricaDeEmbaralhadores fabrica = new FabricaDeEmbaralhadores();

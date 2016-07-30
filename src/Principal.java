@@ -1,9 +1,9 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import MecanicaDoJogo.BancoDePalavras;
 import MecanicaDoJogo.FabricaMecanicaDoJogo;
 import MecanicaDoJogo.MecanicaDoJogo;
-import embaralhadores.LeiaCVS;
  
 public class Principal {
 	
@@ -16,6 +16,7 @@ public static void main(String[] args) {
 		Scanner QualLista;
 		String TipoLista = "";
 		
+		//Seleciona a lista de palavras para o jogo para o jogo.		
 		while (!TipoLista.equals("i") && !TipoLista.equals("p")){
 			System.out.println("Você deseja importar um arquivo do tipo \".CSV\" com palavras para o jogo ou deseja usar a lista padrão de animais?"
 			+ "\nDigite \"P\" para a lista padrão ou \"I\" para importar uma lista e então confirme com \"ENTER\"");
@@ -24,10 +25,22 @@ public static void main(String[] args) {
 		}
 		
 		if (TipoLista.equals("i")) {
-			System.out.println("Digite o caminho do arquivo");
-			Scanner ScannerCaminho = new Scanner(System.in);
-			String caminho = ScannerCaminho.nextLine();
-			BancoDePalavras.Importar(caminho);
+			boolean ok;
+			do {
+				System.out.println("\nDigite o caminho do arquivo");
+				Scanner ScannerCaminho = new Scanner(System.in);
+				String caminho = ScannerCaminho.nextLine();
+				try {
+					BancoDePalavras.Importar(caminho);
+					ok = true;
+					
+				} catch (FileNotFoundException e) {
+					ok = false;
+					System.err.println("Arquivo ou caminho inválido.");
+					//e.printStackTrace();
+					
+				} 
+			} while (!ok);
 		} 
 		
 		FabricaMecanicaDoJogo FabricaJogo = new FabricaMecanicaDoJogo();
@@ -42,8 +55,6 @@ public static void main(String[] args) {
 			inDificuldade = new Scanner(System.in);
 			TipoDeJogo = inDificuldade.nextLine().toLowerCase();
 		}	
-	
-		
 
 		if (TipoDeJogo.equals("f")) {
 			System.out.println("-----------------------------------");
@@ -95,5 +106,10 @@ public static void main(String[] args) {
 			System.err.println("\nVOCÊ VENCEU O JOGO! \\o/ Uhuuu");
 			System.out.println("Total de Pontos: " + jogo.TotalDePontos());
 		}
+}
+
+private static void SelecionarListaDePalavras() {
+	// TODO Auto-generated method stub
+	
 }
 }
