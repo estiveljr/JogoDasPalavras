@@ -1,8 +1,8 @@
 package embaralhadores;
 
 public class FabricaDeEmbaralhadores {
-	String PalavraEmbaralhada = "Erro no embaralhamento das palavras";
-	int pesoPontos;
+	private String PalavraEmbaralhada;
+	private int pesoPontos;
 	
 	public int getPesoPontos() {
 		return pesoPontos;

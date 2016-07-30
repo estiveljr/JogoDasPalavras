@@ -109,8 +109,5 @@ public static void main(String[] args) {
 		}
 }
 
-private static void SelecionarListaDePalavras() {
-	// TODO Auto-generated method stub
 	
-}
 }

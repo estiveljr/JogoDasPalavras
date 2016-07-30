@@ -18,7 +18,7 @@ public class BancoDePalavras {
 		return palavra;
 	}
 	
-	String sortearPalavra(){
+	public String sortearPalavra(){
 		int tam = BancoDePalavras.length;
 		int random = (int)(Math.random() * tam);
 		this.palavra = BancoDePalavras[random];

@@ -74,10 +74,4 @@ public class JogoFacil implements MecanicaDoJogo {
 		return ContagemDeVidas;
 	}
 
-
-
-
-	
-
-
 }

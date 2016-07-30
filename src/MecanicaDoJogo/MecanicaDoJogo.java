@@ -1,8 +1,6 @@
 package MecanicaDoJogo;
 
 public interface MecanicaDoJogo {
-	
-
 	boolean FimDeJogo();
 	boolean PalavraCorreta(String p, String t);	//Compara a entrada do usuário com a palavra solicitada
 	String EscolherPalavra(); 	//Escolher palavra aleatoria do banco
